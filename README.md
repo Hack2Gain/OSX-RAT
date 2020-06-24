@@ -19,7 +19,8 @@
 
 ## Features
 
-- create a simple terminal instance
+- Create a simple terminal instance
+- For use on **ALL APPLE OS's** (macOS, OSX etc.)
 - Undetected by anti-virus
 - Undetectable by user
 - Multi-threaded
@@ -39,10 +40,10 @@ The repository here on Github gives you a taste of what's going on behind the sc
 <br>
 <img src="modules/GUI OSX-RAT.jpg" alt="Hack2Gain" width="250">
 
-The AndriodRAT is made into a undetectable payload that will run on a remote device without detecton. It leaves no trace on the device and cannot be traced back to device containing the client software.
+The AndriodRAT is made into an undetectable payload that will run on a remote device without detecton. It leaves no traces on the device and cannot be traced back to person running the software.
 
 ## This application is maintained and consistently beats all anti-virus software!
 
 ---------------------------------------------------------------
-##### This software is for permitted remote access to an Andriod device and should not be used illegally.
+##### This tool is for permitted remote access to an AppleOS device and should not be used illegally.
 ###### Telegram @Hack2Gain
