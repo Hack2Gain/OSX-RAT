@@ -1,11 +1,7 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-__author__ = "Marten4n6"
-__license__ = "GPLv3"
 
-import os
+import
 import random
-import string
+import
 from sys import exit
 import base64
 
