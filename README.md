@@ -1,23 +1,18 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/Marten4n6/EvilOSX"><img src="https://i.imgur.com/qiAJP95.png" alt="EvilOSX" width="250"></a>
+  <img src="modules/evil_rat_by_black_fire_dragoness-d6531uu.jpg" alt="Hack2Gain" width="250">
   <br>
-  EvilOSX
+  OSX-RAT
   <br>
 </h1>
 
 <h4 align="center">A pure python, post-exploitation, RAT (Remote Administration Tool) for macOS / OSX.</h4>
 
 <p align="center">
-  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+  <a href="LICENSE.txt">
       <img src="https://img.shields.io/badge/license-GPLv3-blue.svg">
   </a>
-  <a href="https://github.com/Marten4n6/EvilOSX/issues">
-    <img src="https://img.shields.io/github/issues/Marten4n6/EvilOSX.svg">
-  </a>
-  <a href="https://github.com/Marten4n6/EvilOSX">
-      <img src="https://img.shields.io/badge/contributions-welcome-orange.svg">
-  </a>
+  <img src="https://img.shields.io/badge/contributions-none-orange.svg">
 </p>
 
 ---
