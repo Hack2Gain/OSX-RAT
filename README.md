@@ -36,14 +36,13 @@
 
 The repository here on Github gives you a taste of what's going on behind the scenes. The OSX-RAT can be purchased through Telegram: @Hack2Gain. Features can be added as well as setting it to be persistent or not. As the user of the software you will get a user-friendly GUI to control the RAT. Easy to use and easy to hide, this is truly a modern OSX-RAT with a the features you need.
 <br>
+<br>
 <img src="modules/GUI OSX-RAT.jpg" alt="Hack2Gain" width="250">
 
-## Credits
+The AndriodRAT is made into a undetectable payload that will run on a remote device without detecton. It leaves no trace on the device and cannot be traced back to device containing the client software.
 
-- Based on the awesome [EmpireProject](https://github.com/EmpireProject)
-- [manwhoami](https://github.com/manwhoami) for his awesome projects: [OSXChromeDecrypt](https://github.com/manwhoami/OSXChromeDecrypt), [MMeTokenDecrypt](https://github.com/manwhoami/MMeTokenDecrypt)
-- Logo created by [motusora](https://www.behance.net/motusora)
+## This application is maintained and consistently beats all anti-virus software!
 
-## License
-
-[GPLv3](https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt)
+---------------------------------------------------------------
+##### This software is for permitted remote access to an Andriod device and should not be used illegally.
+###### Telegram @Hack2Gain
