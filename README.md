@@ -5,6 +5,8 @@
   OSX-RAT
   <br>
 </h1>
+***Code samples reside here on GitHub. Get in Touch to order your personalized tool***
+### Telegram: @Hack2Gain
 
 <h4 align="center">A pure python, post-exploitation, RAT (Remote Administration Tool) for macOS / OSX.</h4>
 
