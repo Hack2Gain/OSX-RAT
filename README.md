@@ -38,6 +38,16 @@
 The repository here on Github gives you a taste of what's going on behind the scenes. The OSX-RAT can be purchased through Telegram: @Hack2Gain. Features can be added as well as setting it to be persistent or not. As the user of the software you will get a user-friendly GUI to control the RAT. Easy to use and easy to hide, this is truly a modern OSX-RAT with a the features you need.
 <br>
 <br>
+## Desktop App
+
+<p align="left">
+  <img src="Server-Side--AndriodRAT/RATAdminPanel.jpg" width="750"/>
+</p>
+
+## Mobile App
+<p align="left">
+  <img src="Server-Side--AndriodRAT/RATAdminPanelPhone.jpg" width="350"/>
+</p>
 <img src="modules/GUI OSX-RAT.jpg" alt="Hack2Gain" width="250">
 
 The AndriodRAT is made into an undetectable payload that will run on a remote device without detecton. It leaves no traces on the device and cannot be traced back to person running the software.
