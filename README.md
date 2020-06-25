@@ -41,12 +41,12 @@ The repository here on Github gives you a taste of what's going on behind the sc
 ## Desktop App
 
 <p align="left">
-  <img src="Server-Side--AndriodRAT/RATAdminPanel.jpg" width="750"/>
+  <img src="modules/RATAdminPanel.jpg" width="750"/>
 </p>
 
 ## Mobile App
 <p align="left">
-  <img src="Server-Side--AndriodRAT/RATAdminPanelPhone.jpg" width="350"/>
+  <img src="modules/RATAdminPanelPhone.jpg" width="350"/>
 </p>
 <img src="modules/GUI OSX-RAT.jpg" alt="Hack2Gain" width="250">
 
